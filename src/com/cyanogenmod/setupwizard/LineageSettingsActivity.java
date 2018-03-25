@@ -200,9 +200,8 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
 
     private void updateMetricsOption() {
         final Bundle myPageBundle = mSetupWizardApp.getSettingsBundle();
-        boolean metricsChecked =
-                !myPageBundle.containsKey(KEY_SEND_METRICS) || myPageBundle
-                        .getBoolean(KEY_SEND_METRICS);
+        boolean metricsChecked = myPageBundle.containsKey(KEY_SEND_METRICS) ?
+                myPageBundle.getBoolean(KEY_SEND_METRICS) : false;
         mMetrics.setChecked(metricsChecked);
         myPageBundle.putBoolean(KEY_SEND_METRICS, metricsChecked);
     }
@@ -222,11 +221,8 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
 
     private void updatePrivacyGuardOption() {
         final Bundle bundle = mSetupWizardApp.getSettingsBundle();
-        boolean enabled = CMSettings.Secure.getInt(getContentResolver(),
-                CMSettings.Secure.PRIVACY_GUARD_DEFAULT, 0) != 0;
         boolean checked = bundle.containsKey(KEY_PRIVACY_GUARD) ?
-                bundle.getBoolean(KEY_PRIVACY_GUARD) :
-                enabled;
+                bundle.getBoolean(KEY_PRIVACY_GUARD) : true;
         mPrivacyGuard.setChecked(checked);
         bundle.putBoolean(KEY_PRIVACY_GUARD, checked);
     }
