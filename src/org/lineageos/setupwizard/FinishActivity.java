@@ -26,7 +26,6 @@ import static org.lineageos.setupwizard.Manifest.permission.FINISH_SETUP;
 import static org.lineageos.setupwizard.SetupWizardApp.ACTION_SETUP_COMPLETE;
 import static org.lineageos.setupwizard.SetupWizardApp.DISABLE_NAV_KEYS;
 import static org.lineageos.setupwizard.SetupWizardApp.ENABLE_RECOVERY_UPDATE;
-import static org.lineageos.setupwizard.SetupWizardApp.KEY_SEND_METRICS;
 import static org.lineageos.setupwizard.SetupWizardApp.LOGV;
 import static org.lineageos.setupwizard.SetupWizardApp.NAVIGATION_OPTION_KEY;
 import static org.lineageos.setupwizard.SetupWizardApp.UPDATE_RECOVERY_PROP;
@@ -175,7 +174,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
     }
 
     private void completeSetup() {
-        handleEnableMetrics(mSetupWizardApp);
         handleNavKeys(mSetupWizardApp);
         handleRecoveryUpdate(mSetupWizardApp);
         handleNavigationOption(mSetupWizardApp);
@@ -187,17 +185,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         Intent intent = WizardManagerHelper.getNextIntent(getIntent(),
                 Activity.RESULT_OK);
         startActivityForResult(intent, NEXT_REQUEST);
-    }
-
-    private static void handleEnableMetrics(SetupWizardApp setupWizardApp) {
-        Bundle privacyData = setupWizardApp.getSettingsBundle();
-        if (privacyData != null
-                && privacyData.containsKey(KEY_SEND_METRICS)) {
-            LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-                    LineageSettings.Secure.STATS_COLLECTION,
-                    privacyData.getBoolean(KEY_SEND_METRICS)
-                            ? 1 : 0);
-        }
     }
 
     private static void handleNavKeys(SetupWizardApp setupWizardApp) {
