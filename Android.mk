@@ -21,7 +21,6 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     androidx-constraintlayout_constraintlayout \
-    libphonenumber \
     org.lineageos.platform.internal
 
 LOCAL_JAVA_LIBRARIES := \
