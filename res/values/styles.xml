@@ -27,7 +27,6 @@
         <item name="android:textColorLink">@color/accent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimations</item>
-        <item name="android:windowLightStatusBar">true</item>
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
     </style>
 
