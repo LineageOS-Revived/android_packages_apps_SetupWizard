@@ -50,7 +50,8 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     }
 
     @Override
-    public void onBackPressed() {}
+    public void onBackPressed() {
+    }
 
     @Override
     protected int getLayoutResId() {

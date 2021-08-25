@@ -68,7 +68,8 @@ public class CaptivePortalSetupActivity extends WrapperSubBaseActivity {
         }
 
         public static void checkForCaptivePortal(URL captivePortalUrl,
-                CaptivePortalSetupActivity captivePortalSetupActivity, boolean cancelAndRecreateIfRunning) {
+                CaptivePortalSetupActivity captivePortalSetupActivity,
+                boolean cancelAndRecreateIfRunning) {
             if (sTask == null || sTask.getStatus() == Status.FINISHED) {
                 sTask = new CheckForCaptivePortalTask(captivePortalUrl, captivePortalSetupActivity);
                 sTask.execute();
@@ -123,9 +124,12 @@ public class CaptivePortalSetupActivity extends WrapperSubBaseActivity {
                 intent.putExtra(ConnectivityManager.EXTRA_CAPTIVE_PORTAL,
                         new CaptivePortal(new ICaptivePortal.Stub() {
                             @Override
-                            public void appResponse(int response) {}
+                            public void appResponse(int response) {
+                            }
+
                             @Override
-                            public void logEvent(int eventId, String packageName) {}
+                            public void logEvent(int eventId, String packageName) {
+                            }
                         }));
                 intent.putExtra("status_bar_color",
                         context.getResources().getColor(R.color.primary_dark));
@@ -133,7 +137,8 @@ public class CaptivePortalSetupActivity extends WrapperSubBaseActivity {
                         R.color.primary_dark));
                 intent.putExtra("progress_bar_color", context.getResources().getColor(
                         R.color.accent));
-                captivePortalSetupActivity.startSubactivity(intent, REQUEST_CODE_SETUP_CAPTIVE_PORTAL);
+                captivePortalSetupActivity.startSubactivity(intent,
+                        REQUEST_CODE_SETUP_CAPTIVE_PORTAL);
             } else {
                 captivePortalSetupActivity.finishAction(RESULT_OK);
                 captivePortalSetupActivity.finish();
