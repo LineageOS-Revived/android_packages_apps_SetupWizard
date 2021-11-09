@@ -28,6 +28,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimations</item>
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
+		<item name="android:buttonStyle">@style/SudNavBarTheme.Buttons</item>
     </style>
 
     <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
@@ -73,7 +74,8 @@
 		<item name="android:forceDarkAllowed">true</item>
     </style>
 
-    <style name="ButtonBar" parent="@android:style/Widget.Material.ActionButton">
+    <style name="SudNavBarTheme" parent="@style/SudNavBarTheme">
+        <item name="android:background">@android:color/transparent</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textAllCaps">true</item>
@@ -86,17 +88,23 @@
         <item name="android:ellipsize">end</item>
 		<item name="android:forceDarkAllowed">true</item>
     </style>
-
-    <style name="ButtonBar.Left">
+	
+	<style name="SudNavBarTheme.Buttons" parent="Widget.AppCompat.Button">
+		<item name="background">@drawable/button</item>
+	</style>
+	
+    <style name="SudNavBarTheme.Left" parent="Widget.AppCompat.Button">
         <item name="android:paddingStart">34dp</item>
         <item name="android:gravity">center_vertical|start</item>
+		<item name="android:background">@drawable/ic_chevron_left_dark</item>
         <item name="android:drawableLeft">@drawable/ic_chevron_left_dark</item>
 		<item name="android:forceDarkAllowed">true</item>
     </style>
 
-    <style name="ButtonBar.Right">
+    <style name="SudNavBarTheme.Right" parent="Widget.AppCompat.Button">
         <item name="android:paddingEnd">34dp</item>
         <item name="android:gravity">center_vertical|end</item>
+		<item name="android:background">@drawable/ic_chevron_right_dark</item>
         <item name="android:drawableRight">@drawable/ic_chevron_right_dark</item>
 		<item name="android:forceDarkAllowed">true</item>
     </style>
