@@ -20,7 +20,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:windowLightStatusBar">@bool/is_status_bar_dark</item>
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary</item>
         <item name="android:colorAccent">@color/accent</item>
@@ -28,7 +28,9 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimations</item>
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
-		<item name="android:buttonStyle">@style/SudNavBarTheme.Buttons</item>
+        <item name="android:buttonStyle">@style/SudNavBarButtonStyle</item>
+        <item name="buttonStyle">@style/SudNavBarButtonStyle</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
@@ -40,42 +42,44 @@
         <item name="android:taskToFrontExitAnimation">@anim/translucent_exit</item>
         <item name="android:taskToBackEnterAnimation">@anim/translucent_enter</item>
         <item name="android:taskToBackExitAnimation">@anim/translucent_exit</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="PageContainer">
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:background">@color/page_background</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="PageContent">
         <item name="android:background">@color/page_background</item>
         <item name="android:paddingTop">@dimen/content_margin_top</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="PageTitle">
         <item name="android:id">@android:id/title</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="PageSummaryText">
         <item name="android:id">@android:id/summary</item>
         <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="SpinnerItem">
         <item name="android:textSize">15sp</item>
         <item name="android:paddingLeft">@dimen/content_margin_left</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="SudNavBarTheme" parent="@style/SudNavBarTheme">
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorButtonNormal">@android:color/darker_gray</item>
+        <item name="colorButtonNormal">@android:color/darker_gray</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textAllCaps">true</item>
@@ -86,39 +90,39 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:drawablePadding">6dp</item>
         <item name="android:ellipsize">end</item>
-		<item name="android:forceDarkAllowed">true</item>
+        <item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 	
-	<style name="SudNavBarTheme.Buttons" parent="Widget.AppCompat.Button">
-		<item name="background">@drawable/button</item>
-	</style>
+	<style name="SudNavBarButtonStyle" parent="SudNavBarButtonStyle">
+        <item name="android:forceDarkAllowed">@bool/is_dark</item>
+		<item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+		<item name="android:textStyle">normal</item>
+    </style>	
 	
-    <style name="SudNavBarTheme.Left" parent="Widget.AppCompat.Button">
+    <style name="Button.Left" parent="SudNavBarButtonStyle">
         <item name="android:paddingStart">34dp</item>
         <item name="android:gravity">center_vertical|start</item>
-		<item name="android:background">@drawable/ic_chevron_left_dark</item>
         <item name="android:drawableLeft">@drawable/ic_chevron_left_dark</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
-    <style name="SudNavBarTheme.Right" parent="Widget.AppCompat.Button">
+    <style name="Button.Right" parent="SudNavBarButtonStyle">
         <item name="android:paddingEnd">34dp</item>
         <item name="android:gravity">center_vertical|end</item>
-		<item name="android:background">@drawable/ic_chevron_right_dark</item>
         <item name="android:drawableRight">@drawable/ic_chevron_right_dark</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="LocaleWidget">
         <item name="android:textAppearance">?android:attr/textAppearance</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="LocaleWidget.LocalePicker">
         <item name="android:orientation">vertical</item>
         <item name="android:fadingEdge">vertical</item>
         <item name="android:fadingEdgeLength">50dip</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="LocaleWidget.Material.LocalePicker" parent="LocaleWidget.LocalePicker">
@@ -128,8 +132,8 @@
         <item name="internalLayout">@layout/locale_picker</item>
         <item name="internalMinWidth">64dip</item>
         <item name="internalMaxHeight">180dip</item>
-        <item name="virtualButtonPressedDrawable">@null</item>
-		<item name="android:forceDarkAllowed">true</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
+		<item name="android:forceDarkAllowed">@bool/is_dark</item>
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
