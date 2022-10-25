@@ -72,6 +72,7 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
                     LineageSettings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0);
         } else {
             navKeysRow.setVisibility(View.GONE);
+            onNextPressed();
         }
     }
 
