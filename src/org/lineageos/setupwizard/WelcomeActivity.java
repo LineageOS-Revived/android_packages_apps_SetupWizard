@@ -34,7 +34,7 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRootView = findViewById(R.id.root);
-        setNextText(R.string.next);
+        setNextText(R.string.start);
         setBackText(R.string.emergency_call);
         setBackDrawable(null);
         mEnableAccessibilityController =
