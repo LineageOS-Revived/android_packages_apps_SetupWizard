@@ -50,8 +50,8 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
         FooterButtonStyleUtils.applySecondaryButtonPartnerResource(this, emergButton, true);
 
         TextView welcomeTitle = findViewById(R.id.welcome_title);
-        welcomeTitle.setText(getString(R.string.setup_welcome_message,
-                getString(R.string.os_name)));
+        welcomeTitle.setText(getString(R.string.setup_welcome));
+
     }
 
     @Override
