@@ -149,24 +149,34 @@ public class SetupWizardUtils {
         Settings.Global.putInt(context.getContentResolver(), KEY_DETECT_CAPTIVE_PORTAL, 1);
     }
 
-    public static void disableStatusBar(Context context) {
+    public static StatusBarManager disableStatusBar(Context context) {
         StatusBarManager statusBarManager = context.getSystemService(StatusBarManager.class);
         if (statusBarManager != null) {
-            statusBarManager.disable(DISABLE_NOTIFICATION_ALERTS | DISABLE_SEARCH
-            );
+            if (LOGV) {
+                Log.v(SetupWizardApp.TAG, "Disabling status bar");
+            }
+            statusBarManager.setDisabledForSetup(true);
         } else {
             Log.w(SetupWizardApp.TAG,
-                    "Skip disabling notfications - could not get StatusBarManager");
+                    "Skip disabling status bar - could not get StatusBarManager");
         }
+        return statusBarManager;
     }
 
     public static void enableStatusBar(Context context) {
-        StatusBarManager statusBarManager = context.getSystemService(StatusBarManager.class);
-        if(statusBarManager != null) {
-            Log.i(SetupWizardApp.TAG, "Enabling notfications - StatusBarManager");
-            statusBarManager.disable(DISABLE_NONE);
+        final SetupWizardApp setupWizardApp = (SetupWizardApp)context.getApplicationContext();
+        StatusBarManager statusBarManager = setupWizardApp.getStatusBarManager();
+        if (statusBarManager != null) {
+            if (LOGV) {
+                Log.v(SetupWizardApp.TAG, "Enabling status bar");
+            }
+            statusBarManager.setDisabledForSetup(false);
+
+            // Session must be destroyed if it's not used anymore
+            statusBarManager = null;
         } else {
-            Log.i(SetupWizardApp.TAG, "Skip enabling notfications - StatusBarManager is null");
+            Log.w(SetupWizardApp.TAG,
+                    "Skip enabling status bar - could not get StatusBarManager");
         }
     }
 
