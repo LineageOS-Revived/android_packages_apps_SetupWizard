@@ -56,7 +56,7 @@
                         android:background="?android:attr/selectableItemBackground"
                         android:clickable="true">
 
-                        <CheckBox
+                        <org.lineageos.setupwizard.widget.HapticCheckBox
                             android:id="@+id/nav_keys_checkbox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

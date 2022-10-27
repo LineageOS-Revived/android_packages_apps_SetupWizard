@@ -20,7 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <Button
+    <org.lineageos.setupwizard.widget.HapticButton
         android:id="@+id/navbar_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         android:visibility="gone"
         style="@style/SudGlifButton.Secondary" />
 
-    <Button
+    <org.lineageos.setupwizard.widget.HapticButton
         android:id="@+id/navbar_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

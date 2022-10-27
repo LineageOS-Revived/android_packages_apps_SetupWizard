@@ -79,7 +79,7 @@
                     android:importantForAccessibility="no"
                     android:orientation="vertical">
 
-                    <Button
+                    <org.lineageos.setupwizard.widget.HapticButton
                         android:id="@+id/launch_accessibility"
                         style="@style/SudGlifButton.Secondary"
                         android:layout_width="fill_parent"
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom">
 
-            <Button
+            <org.lineageos.setupwizard.widget.HapticButton
                 android:id="@+id/emerg_dialer"
                 style="@style/SudGlifButton.Secondary"
                 android:layout_width="wrap_content"
@@ -114,7 +114,7 @@
                 android:layout_height="0.0dip"
                 android:layout_weight="1.0" />
 
-            <Button
+            <org.lineageos.setupwizard.widget.HapticButton
                 android:id="@id/start"
                 style="@style/SudGlifButton.Primary"
                 android:layout_width="wrap_content"

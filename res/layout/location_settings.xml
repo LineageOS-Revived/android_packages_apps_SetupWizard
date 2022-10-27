@@ -43,7 +43,6 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <LinearLayout
                         android:id="@+id/location"
                         android:orientation="horizontal"
@@ -54,8 +53,7 @@
                         android:background="?android:attr/selectableItemBackground"
                         android:clickable="true">
 
-
-                        <CheckBox
+                        <org.lineageos.setupwizard.widget.HapticCheckBox
                             android:id="@+id/location_checkbox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

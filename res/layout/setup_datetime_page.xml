@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <Spinner
+                    <org.lineageos.setupwizard.widget.HapticSpinner
                         android:id="@+id/timezone_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -57,25 +57,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <RadioButton
+                        <org.lineageos.setupwizard.widget.HapticRadioButton
                             android:id="@+id/radio_gesture"
                             android:text="@string/gesture_navigation"
                             android:checked="true"
                             style="@style/SudRadioButton" />
 
-                        <RadioButton
+                        <org.lineageos.setupwizard.widget.HapticRadioButton
                             android:id="@+id/radio_two_button"
                             android:text="@string/two_button_navigation"
                             style="@style/SudRadioButton" />
 
-                        <RadioButton
+                        <org.lineageos.setupwizard.widget.HapticRadioButton
                             android:id="@+id/radio_sw_keys"
                             android:text="@string/navbar_navigation"
                             style="@style/SudRadioButton" />
 
                     </RadioGroup>
 
-                    <CheckBox
+                    <org.lineageos.setupwizard.widget.HapticCheckBox
                         android:id="@+id/hide_navigation_hint"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
