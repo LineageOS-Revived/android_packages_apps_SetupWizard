@@ -37,7 +37,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.setupcompat.util.WizardManagerHelper;
 
 import lineageos.providers.LineageSettings;
@@ -99,8 +98,6 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
             finishAction(RESULT_OK, intent);
         }
 
-        final LottieAnimationView navigationIllustration =
-                findViewById(R.id.navigation_illustration);
         final RadioGroup radioGroup = findViewById(R.id.navigation_radio_group);
         mHideGesturalHint = findViewById(R.id.hide_navigation_hint);
         radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -109,23 +106,18 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
                 switch (checkedId) {
                 case R.id.radio_gesture:
                     mSelection = NAV_BAR_MODE_GESTURAL_OVERLAY;
-                    navigationIllustration
-                            .setAnimation(R.raw.lottie_system_nav_fully_gestural);
                     revealHintCheckbox();
                     break;
                 case R.id.radio_two_button:
                     mSelection = NAV_BAR_MODE_2BUTTON_OVERLAY;
-                    navigationIllustration.setAnimation(R.raw.lottie_system_nav_2_button);
                     hideHintCheckBox();
                     break;
                 case R.id.radio_sw_keys:
                     mSelection = NAV_BAR_MODE_3BUTTON_OVERLAY;
-                    navigationIllustration.setAnimation(R.raw.lottie_system_nav_3_button);
                     hideHintCheckBox();
                     break;
                 }
 
-                navigationIllustration.playAnimation();
             }
         });
     }
