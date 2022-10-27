@@ -61,6 +61,9 @@ public class SetupWizardApp extends Application {
     public static final String EXTRA_PREFS_SHOW_BUTTON_BAR = "extra_prefs_show_button_bar";
     public static final String EXTRA_PREFS_SET_BACK_TEXT = "extra_prefs_set_back_text";
 	public static final String EXTRA_PREFS_SET_NEXT_TEXT = "extra_prefs_set_next_text";
+    public static final String EXTRA_PREFS_SHOW_SKIP = "extra_prefs_show_skip";
+    public static final String EXTRA_PREFS_SHOW_SKIP_TV = "extra_show_skip_network";
+    public static final String EXTRA_ENABLE_NEXT_ON_CONNECT = "wifi_enable_next_on_connect";
 	public static final String EXTRA_SHOW_CUSTOM_BUTTON = "wifi_show_custom_button";
     public static final String EXTRA_IS_SETUP_FLOW = "isSetupFlow";
 
