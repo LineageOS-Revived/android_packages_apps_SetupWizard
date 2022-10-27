@@ -70,7 +70,7 @@
 
     <com.google.android.setupdesign.view.NavigationBar
         android:id="@+id/navigation_bar"
-        style="@style/SudNavBarTheme"
+        style="@style/SudGlifButtonBar.Stackable"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sud_navbar_height" />
 </LinearLayout>
