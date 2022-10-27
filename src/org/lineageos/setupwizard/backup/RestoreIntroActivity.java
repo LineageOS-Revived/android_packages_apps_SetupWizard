@@ -37,8 +37,6 @@ public class RestoreIntroActivity extends SubBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getGlifLayout().setDescriptionText(getString(R.string.intro_restore_subtitle,
-                getString(R.string.os_name)));
     }
 
     @Override

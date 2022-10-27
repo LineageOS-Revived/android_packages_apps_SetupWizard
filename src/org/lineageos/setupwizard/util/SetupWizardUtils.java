@@ -86,6 +86,15 @@ public class SetupWizardUtils {
         return context.getSharedPreferences("SetupWizardPrefs", MODE_PRIVATE);
     }
 
+    public static boolean isMobileDataEnabled(Context context) {
+        try {
+            TelephonyManager tm = context.getSystemService(TelephonyManager.class);
+            return tm.getDataEnabled();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void setMobileDataEnabled(Context context, boolean enabled) {
         TelephonyManager tm = context.getSystemService(TelephonyManager.class);
         if (tm.isMultiSimEnabled()) {

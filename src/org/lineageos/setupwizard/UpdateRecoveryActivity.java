@@ -41,9 +41,6 @@ public class UpdateRecoveryActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSetupWizardApp = (SetupWizardApp) getApplication();
-        getGlifLayout().setDescriptionText(getString(R.string.update_recovery_full_description,
-                getString(R.string.update_recovery_description),
-                getString(R.string.update_recovery_warning)));
 
         if (!SetupWizardUtils.hasRecoveryUpdater(this)) {
             Log.v(TAG, "No recovery updater, skipping UpdateRecoveryActivity");

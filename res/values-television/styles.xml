@@ -15,5 +15,5 @@
      limitations under the License.
 -->
 <resources>
-    <style name="Theme.Setup" parent="SudDynamicColorThemeGlifV3.DayNight" />
+    <style name="Theme.Setup" parent="SudThemeGlifV3.DayNight" />
 </resources>

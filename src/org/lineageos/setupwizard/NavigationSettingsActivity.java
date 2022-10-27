@@ -67,7 +67,6 @@ public class NavigationSettingsActivity extends BaseSetupWizardActivity {
                 org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
         boolean hasHomeKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
-        getGlifLayout().setDescriptionText(getString(R.string.navigation_summary));
         setNextText(R.string.next);
 
         int available = 3;

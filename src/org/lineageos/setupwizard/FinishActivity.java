@@ -175,7 +175,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
 
     private void completeSetup() {
         handleNavKeys(mSetupWizardApp);
-        handleRecoveryUpdate(mSetupWizardApp);
         handleNavigationOption(mSetupWizardApp);
         final WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(mSetupWizardApp);
@@ -191,15 +190,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         if (setupWizardApp.getSettingsBundle().containsKey(DISABLE_NAV_KEYS)) {
             writeDisableNavkeysOption(setupWizardApp,
                     setupWizardApp.getSettingsBundle().getBoolean(DISABLE_NAV_KEYS));
-        }
-    }
-
-    private static void handleRecoveryUpdate(SetupWizardApp setupWizardApp) {
-        if (setupWizardApp.getSettingsBundle().containsKey(ENABLE_RECOVERY_UPDATE)) {
-            boolean update = setupWizardApp.getSettingsBundle()
-                    .getBoolean(ENABLE_RECOVERY_UPDATE);
-
-            SystemProperties.set(UPDATE_RECOVERY_PROP, String.valueOf(update));
         }
     }
 

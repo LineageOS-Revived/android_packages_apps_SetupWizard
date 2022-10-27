@@ -53,7 +53,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.HandlerExecutor;
 import android.os.Looper;
-import android.sysprop.TelephonyProperties;
+import android.os.SystemProperties;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
@@ -318,11 +318,11 @@ public class PhoneMonitor {
     }
 
     public int getLteOnCdmaMode(int subId) {
-        if (mTelephony == null || mTelephony.createForSubscriptionId(subId).getLteOnCdmaMode(subId)
-                == LTE_ON_CDMA_UNKNOWN) {
-            return TelephonyProperties.lte_on_cdma_device().orElse(LTE_ON_CDMA_UNKNOWN);
+        if (mTelephony == null || mTelephony.createForSubscriptionId(subId).getLteOnCdmaMode()
+                    == LTE_ON_CDMA_UNKNOWN) {
+            return SystemProperties.getInt("telephony.lteOnCdmaDevice", LTE_ON_CDMA_UNKNOWN);
         }
-        return mTelephony.createForSubscriptionId(subId).getLteOnCdmaMode(subId);
+        return mTelephony.createForSubscriptionId(subId).getLteOnCdmaMode();
     }
 
     private void logPhoneState(String prefix) {

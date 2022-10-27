@@ -62,7 +62,7 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         mSetupWizardApp = (SetupWizardApp) getApplication();
         setNextText(R.string.next);
-        getGlifLayout().setDescriptionText(servicesFullDescription);
+
         View navKeysRow = findViewById(R.id.nav_keys);
         navKeysRow.setOnClickListener(mNavKeysClickListener);
         mNavKeys = (CheckBox) findViewById(R.id.nav_keys_checkbox);
