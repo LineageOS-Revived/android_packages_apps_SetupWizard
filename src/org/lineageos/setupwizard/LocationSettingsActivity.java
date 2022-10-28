@@ -21,14 +21,18 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 public class LocationSettingsActivity extends BaseSetupWizardActivity {
 
     public static final String TAG =
             LocationSettingsActivity.class.getSimpleName().substring(0, 22);
 
-    private CheckBox mLocationAccess;
+    private ImageView mLocationIcon;
+    private TextView mLocationTitle;
+    private Switch mLocationAccess;
 
     private LocationManager mLocationManager;
 
@@ -37,13 +41,24 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         setNextText(R.string.next);
 
-        mLocationAccess = (CheckBox) findViewById(R.id.location_checkbox);
+        mLocationIcon = (ImageView) findViewById(R.id.location_icon);
+        mLocationTitle = (TextView) findViewById(R.id.enable_location_title);
+        mLocationAccess = (Switch) findViewById(R.id.location_switch);
+
         mLocationManager = getSystemService(LocationManager.class);
         View locationAccessView = findViewById(R.id.location);
         locationAccessView.setOnClickListener(v -> {
             mLocationManager.setLocationEnabledForUser(!mLocationAccess.isChecked(),
                     new UserHandle(UserHandle.USER_CURRENT));
             mLocationAccess.setChecked(!mLocationAccess.isChecked());
+
+            if (!mLocationAccess.isChecked()) {
+                mLocationIcon.setImageResource(R.drawable.ic_location_off);
+                mLocationTitle.setText(R.string.location_access_disabled);
+            } else {
+                mLocationIcon.setImageResource(R.drawable.ic_location_on);
+                mLocationTitle.setText(R.string.location_access_enabled);
+            }
         });
     }
 

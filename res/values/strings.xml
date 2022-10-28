@@ -50,7 +50,9 @@
     <string name="choose_data_sim_summary" product="default">Which SIM do you want to use for data? The selected SIM may incur network charges as it will be used to set up your phone.</string>
 
     <string name="date_time_summary">Set your time zone and adjust current date and time if needed</string>
-
+    
+    <string name="location_access_enabled">Location service is enabled</string>
+    <string name="location_access_disabled">Location service is disabled</string>
     <string name="location_access_summary"><b>Allow apps that have asked your permission</b> to use your location information. This may include your current location and past locations.</string>
 
     <string name="setup_mobile_data">Turn on cellular data</string>
