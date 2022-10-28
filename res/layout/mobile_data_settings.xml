@@ -89,7 +89,7 @@
                             android:text="@string/setup_mobile_data_no_service"
                             android:maxLines="4" />
 
-                        <Switch
+                        <org.lineageos.setupwizard.widget.HapticSwitch
                             android:id="@+id/data_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
