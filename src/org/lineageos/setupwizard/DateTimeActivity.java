@@ -40,6 +40,7 @@ import android.widget.TimePicker;
 import com.android.settingslib.datetime.ZoneGetter;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
+import org.lineageos.setupwizard.R;
 
 import java.util.Calendar;
 import java.util.Collections;
@@ -308,6 +309,7 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
             final Calendar calendar = Calendar.getInstance();
             return new TimePickerDialog(
                     getActivity(),
+                    R.style.TimePickerDialogStyle,
                     this,
                     calendar.get(Calendar.HOUR_OF_DAY),
                     calendar.get(Calendar.MINUTE),
@@ -333,12 +335,13 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar calendar = Calendar.getInstance();
-            return new DatePickerDialog(
-                    getActivity(),
+            return new DatePickerDialog(getActivity(),
+                    R.style.DatePickerDialogStyle,
                     this,
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH));
+
         }
     }
 }

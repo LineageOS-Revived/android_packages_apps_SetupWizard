@@ -17,8 +17,33 @@
 -->
 <resources>
     <style name="Theme.Setup" parent="@style/SudThemeGlifV3.DayNight">
-        <item name="sucUsePartnerResource">true</item>
-        <item name="sudUsePartnerHeavyTheme">true</item>
+        <item name="android:colorBackground">@color/page_background</item>
+        <item name="android:colorAccent">@color/accent</item>
+     </style>
+
+     <style name="DatePickerDialogStyle" parent="android:Theme.Material.Dialog">
+         <item name="android:textAllCaps">false</item>
+         <item name="android:datePickerStyle">@style/DatePickerSpinnerStyle</item>
+         <item name="dialogCornerRadius">@dimen/sud_glif_alert_dialog_corner_radius</item>
+         <item name="android:colorAccent">@color/accent</item>
+     </style>
+
+     <style name="DatePickerSpinnerStyle" parent="android:Widget.Material.DatePicker">
+         <item name="android:datePickerMode">spinner</item>
+         <item name="android:calendarViewShown">false</item>
+         <item name="android:colorAccent">@color/accent</item>
+     </style>
+
+     <style name="TimePickerDialogStyle" parent="android:Theme.Material.Dialog">
+         <item name="android:textAllCaps">false</item>
+         <item name="android:timePickerStyle">@style/TimePickerSpinnerStyle</item>
+         <item name="dialogCornerRadius">@dimen/sud_glif_alert_dialog_corner_radius</item>
+         <item name="android:colorAccent">@color/accent</item>
+     </style>
+
+    <style name="TimePickerSpinnerStyle" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+        <item name="android:colorAccent">@color/accent</item>
     </style>
 
     <style name="SpinnerItem">
